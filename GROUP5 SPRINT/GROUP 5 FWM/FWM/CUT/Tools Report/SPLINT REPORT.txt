@@ -1,0 +1,34 @@
+SPLINT REPORT
+
+Splint 3.1.2 --- 21 Feb 2021
+
+Spec file not found: fwm_func.lcl
+fwm_func.c: (in function NGO_Registration)
+fwm_func.c:32:23: Function returns with non-null global new_n referencing null
+                     storage
+  A global variable does not satisfy its annotations when control is
+  transferred. (Use -globstate to inhibit warning)
+   fwm_func.c:29:12: Storage new_n may become null
+fwm_func.c:34:8: Test expression for while not boolean, type int: 1
+  Test expression type is not boolean or int. (Use -predboolint to inhibit
+  warning)
+fwm_func.c:40:3: Return value (type int) ignored: scanf("%s", chec...
+  Result returned by function call is not used. If this is intended, can cast
+  result to (void) to eliminate message. (Use -retvalint to inhibit warning)
+fwm_func.c:59:37: Only storage ptr_n->next_n assigned to unqualified (in post
+                     loop increment): ptr_n = ptr_n->next_n
+  The only reference to this storage is transferred to another reference (e.g.,
+  by returning it) that does not have the only annotation. This may lead to a
+  memory leak, since the new reference is not necessarily released. (Use
+  -onlytrans to inhibit warning)
+fwm_func.c:76:3: Unreachable code: break
+  This code will never be reached on any possible execution. (Use -unreachable
+  to inhibit warning)
+fwm_func.c:79:8: Test expression for while not boolean, type int: 1
+fwm_func.c:83:3: Return value (type int) ignored: scanf("%s", new_...
+fwm_func.c:84:14: Variable length initialized to type size_t, expects int:
+                     strlen(new_n->name)
+  To allow arbitrary integral types to match any integral type, use
+  +matchanyintegral.
+fwm_func.c:96:10: Parse Error. (For help on parse errors, see splint -help
+                     parseerrors.)
