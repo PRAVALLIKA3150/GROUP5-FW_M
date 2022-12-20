@@ -1,8 +1,9 @@
 SPLINT REPORT
 
-Splint 3.1.2 --- 21 Feb 2021
+Splint 3.1.2 --- 20 Feb 2018
 
-Spec file not found: fwm_func.lcl
+ 
+
 fwm_func.c: (in function NGO_Registration)
 fwm_func.c:32:23: Function returns with non-null global new_n referencing null
                      storage
